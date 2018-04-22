@@ -1,0 +1,11 @@
+= form_for(@order) do |f|
+  .form-group
+    = f.label :restaurant_id
+    = f.select 'restaurant_id', options_from_collection_for_select(@restaurants, :id, :name)
+    = link_to "Can't find your restaurant? Add it!", new_restaurant_path
+  .form-group
+    = f.label :order
+    = f.text_field :order, autofocus: true, class: 'form-control'
+  .form-controls
+    = f.submit "Submit", class: 'btn btn-primary'
+

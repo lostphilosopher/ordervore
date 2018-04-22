@@ -1,0 +1,8 @@
+%h2
+  Orders
+= link_to 'New Order', new_order_path
+%br
+- @user.restaurants.each do |restaurant|
+  - order = Order.find_by(user_id: current_user.id, restaurant_id: restaurant.id)
+  = link_to "#{restaurant.name} order", order_path(id: order.id)
+  %br

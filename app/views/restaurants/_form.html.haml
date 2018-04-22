@@ -1,0 +1,9 @@
+= form_for(@restaurant) do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :menu_url
+    = f.text_field :menu_url, class: 'form-control'
+  .form-controls
+    = f.submit "Submit", class: 'btn btn-primary'
