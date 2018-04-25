@@ -1,0 +1,15 @@
+%h2
+  Users
+%br
+- unless @users.empty?
+  - @users.each do |user|
+    %strong
+      = "#{user.name}"
+    %br
+    - unless user.orders.empty?
+      - user.orders.each do |order|
+        = link_to "#{order.restaurant.name} order", order_path(id: order.id)
+        %br
+    - else
+      There are no saved orders for this user :-(
+

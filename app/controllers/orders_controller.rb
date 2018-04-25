@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+
   def new
     return redirect_to new_restaurant_path if Restaurant.count < 1
 
@@ -14,6 +16,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(id: params[:id])
+  end
+
+  def index
   end
 
   private

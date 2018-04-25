@@ -1,10 +1,10 @@
 %h2
   Find someone's order
 
-= form_tag('/user/search', method: :get) do
+= form_tag('/users', method: :get) do
   .form-group
-    = label_tag(:name, 'Search by name')
-    = text_field_tag(:name)
+    = label_tag(:search)
+    = text_field_tag(:search)
   .form-controls
     = submit_tag("Submit", class: 'btn btn-primary')
 
