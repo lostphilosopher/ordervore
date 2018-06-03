@@ -1,5 +1,13 @@
-%h2
-  = "#{@order.restaurant.name}"
-
-%p  
-  = "#{@order.order}"
+.container-fluid
+  .row
+    .col-xs-8
+      %h2
+        = "#{@order.restaurant.name}"
+    .col-xs-4.text-right
+      - if current_user && current_user.id == @order.user.id
+        = link_to 'Edit', edit_order_path(id: @order.id), class: 'btn-primary btn-sm'
+        = link_to 'Delete', order_path(id: @order.id), method: :delete, class: 'btn-sm btn-primary'
+  .row
+    .col-xs-12.content
+      %p  
+        = "#{@order.order}"

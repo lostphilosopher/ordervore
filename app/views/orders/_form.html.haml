@@ -1,8 +1,10 @@
 = form_for(@order) do |f|
   .form-group
     = f.label :restaurant_id
-    = f.select 'restaurant_id', options_from_collection_for_select(@restaurants, :id, :name)
-    = link_to "Can't find your restaurant? Add it!", new_restaurant_path
+    = f.select 'restaurant_id', options_from_collection_for_select(@restaurants, :id, :name, selected: @order.restaurant ? @order.restaurant.id : nil)
+    %br
+    = link_to "Can't find your restaurant?", new_restaurant_path
+    = link_to "Add it!", new_restaurant_path, class: 'btn btn-primary'
   .form-group
     = f.label :order
     = f.text_field :order, autofocus: true, class: 'form-control'

@@ -6,24 +6,22 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://fonts.googleapis.com/css?family=Caveat", :rel => "stylesheet"}/
   %body
     .container-fluid
       .row
         .col-sm-6.col-sm-offset-3
-          %h1
-            Ordervore
-          - if current_user
-            = link_to 'Home', root_path
-            = ' | '
-            = link_to 'My Orders', user_path(id: current_user.id)
-            = ' | '
-            = link_to 'My Profile', edit_user_registration_path(id: current_user.id)
-            = ' | '
-            = link_to 'Sign Out', destroy_user_session_path, { method: :delete }
-          - else
-            = link_to('Sign In / Up', new_user_session_path, class: 'btn btn-lg btn-primary')
+          .content
+            %h1
+              = link_to('Ordervore', root_path)
+          .text-center
+            - if current_user
+              = link_to('Home', root_path, class: 'btn btn-primary')
+              = link_to('My Orders', user_path(id: current_user.id), class: 'btn btn-primary')
+              = link_to('My Profile', edit_user_registration_path(id: current_user.id), class: 'btn btn-primary' )
+              = link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-primary')
+            - else
+              = link_to('Sign In / Up', new_user_session_path, class: 'btn btn-lg btn-primary', class: 'btn btn-primary')
       .row
         .col-sm-6.col-sm-offset-3
-          %br
-          %br  
           = yield

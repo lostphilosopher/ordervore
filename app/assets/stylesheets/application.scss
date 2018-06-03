@@ -14,3 +14,54 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background: url(carrots-food-fresh-616404.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #B1988A;
+  font-family: 'Caveat', cursive;
+  font-size: 500%;
+  color: #604441;
+}
+
+h1{
+  font-size: 200%;
+}
+h2{
+  font-size: 150%;
+}
+a {
+  color: #604441;
+  text-decoration: none;
+}
+a:hover { 
+  color: #B1988A;
+  text-decoration: none;
+}
+input[type="text"] {
+  height: 100%;
+  font-size: 100%;
+}
+
+
+.btn-primary {
+  border-color: #B1988A;
+  background-color: #FFA500;
+  font-size: 80%;
+}
+.btn-primary:hover {
+  border-color: #B1988A;
+  background-color: #B1988A;
+}
+.btn {
+  font-size: 80%;
+}
+.btn-sm {
+  font-size: 40%;
+}
+.content {
+  background-color: #e4dbd2;
+}
