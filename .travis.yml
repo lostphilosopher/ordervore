@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: ZpCL5MSQ53Xvr8PxefNqx+TQvZEcY8fg7cSbtTagbblUwTD6OI9wUmvC534uqZRtNirP8kyqGuuB6bSy/Hc9R8lK06+Kr14J/bJvkx7CMLFB2LbWspfnO3DGRKPBNjKq8MCF1+JhZFcJHKQ6l+URMTLiJNBlzJ6SB/8dI97IDHnnKkZ3OWeedUznc35z4154CvCX3smc4E9vJTvmjCU+LqB9S1i9Kch3Wn/IHlrPJ3Mj9lmtybpHdV/MWQPOaZ+2H/apxTTy5mJDcVlsOiBkkRz5C90mpDrMXLsn5iRzN2buTHnO0gxGNqgpJL3fsrw+bpvBbgZ1oyFf4zn+WrUm+HZfXJNcuFARKj/WR+O6UAoJhSafjibxcC3NsqM+AnkLp0aNXgSOVxVeYY6Hx4Z6t1i/vXhZHdjWqG274RdHBV3KI3JF0SPdvBexJlmJMFJlhtSmGIg7Vm3YPmEw2Be2DJ3Q5QUVShP4afLvmcMCifyEeOw9v80NWN2ChcE6rAcfczwr2LtJ3pI/+BOPwlvrlUv2lBJqu6sfB3Ffj7LnGx4zMvBFrdyYv/b6jaD1vaPIoFo787EB6BAtz3jUnolT43LtJh1qhJdgdCa5y8+bBS0RLmVd9vCSgzQWVmqrTPA8YRgAz8yyDCVH7ROfy2hUMh00yzNGhz2O6T7Zg2gCKLs=
+  app:
+    master: ordervore-dev
+  run: "rake db:migrate"
