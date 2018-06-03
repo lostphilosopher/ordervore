@@ -1,9 +1,12 @@
 class GroupOrdersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   def new
+    @groups = Group.where(user_id: current_user.id)
+    if @groups.empty?
+      return redirect_to new_group_path
+    end
     @group_order = GroupOrder.new
     @order = Order.find_by(id: params[:order_id])
-    @groups = Group.where(user_id: current_user.id)
   end
 
   def create
