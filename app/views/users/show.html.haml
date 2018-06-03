@@ -1,12 +1,19 @@
-%h2
-  Orders
-= link_to 'New Order', new_order_path
-%br
-- if @user
-  - @user.restaurants.each do |restaurant|
-    - order = Order.find_by(user_id: current_user.id, restaurant_id: restaurant.id)
-    = link_to "#{restaurant.name} order", order_path(id: order.id)
+.content
+  %h2
+    Orders
+  - if current_user && current_user.id == @user.id
+    .text-center
+      = link_to 'New Order', new_order_path, class: 'btn btn-primary'
     %br
-- else
-  %h3
-    User not found...
+  - if @user
+    - @user.restaurants.each do |restaurant|
+      - order = Order.find_by(user_id: @user.id, restaurant_id: restaurant.id)
+      .text-center
+        = link_to "#{restaurant.name} order", order_path(id: order.id)
+        = link_to order_path(id: order.id), class: 'btn btn-primary btn-sm' do
+          %span{ class: 'glyphicon glyphicon-cutlery', aria: { hidden: 'true'} }
+      %br
+  - else
+    .text-center
+      %h3
+        User not found...

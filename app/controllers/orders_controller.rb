@@ -14,6 +14,23 @@ class OrdersController < ApplicationController
     redirect_to user_path(id: current_user.id)
   end
 
+  def edit
+    @order = Order.find_by(id: params[:id])
+    @restaurants = Restaurant.all
+  end
+
+  def update
+    @order = Order.find_by(id: params[:id])
+    @order.update(order_params)
+    redirect_to order_path(id: @order.id)
+  end
+
+  def destroy
+    @order = Order.find_by(id: params[:id])
+    @order.destroy
+    redirect_to user_path(id: current_user.id)
+  end
+
   def show
     @order = Order.find_by(id: params[:id])
   end

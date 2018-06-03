@@ -1,15 +1,11 @@
 %h2
   Users
-%br
 - unless @users.empty?
   - @users.each do |user|
-    %strong
-      = "#{user.name}"
-    %br
-    - unless user.orders.empty?
-      - user.orders.each do |order|
-        = link_to "#{order.restaurant.name} order", order_path(id: order.id)
-        %br
-    - else
-      There are no saved orders for this user :-(
-
+    .content
+      = "#{user.name} aka #{user.handle}"
+      = link_to user_path(id: user.id), class: 'btn btn-primary' do
+        %span{ class: 'glyphicon glyphicon-cutlery', aria: { hidden: 'true'} }
+- else
+  %p
+    No users found for that search...
