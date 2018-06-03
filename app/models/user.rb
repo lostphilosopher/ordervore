@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :orders
   has_many :restaurants, through: :orders
+  has_many :groups
 
   validates :handle, uniqueness: true
 end
