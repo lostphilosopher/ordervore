@@ -1,0 +1,16 @@
+%h2 
+  Groups (for Group Orders)
+
+.text-center
+  = link_to 'Create new Group', new_group_path, class: 'btn btn-primary'
+
+%br
+.content
+  - unless @groups.empty?
+    - @groups.each do |group|
+      = link_to group.name, group_path(id: group.id)
+      = link_to group_path(id: group.id), class: 'btn btn-primary' do
+        %span{ class: 'glyphicon glyphicon-shopping-cart', aria: { hidden: 'true'} }
+      %br
+  - else
+    You haven't created any groups yet...

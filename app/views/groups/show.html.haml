@@ -1,0 +1,15 @@
+.container-fluid
+  .row
+    .col-xs-10
+      %h2
+        = "#{@group.name}"
+    .col-xs-2.text-right
+      - if current_user && current_user.id == @group.user.id
+        = link_to 'Delete', group_path(id: @group.id), method: :delete, class: 'btn-sm btn-primary'
+.content
+  - @group.group_orders.each do |group_order|
+    - order = group_order.order
+    = "#{order.order} for #{order.user.name}"
+    = link_to group_order_path(id: group_order.id), method: :delete, class: 'btn-sm btn-primary' do
+      %span{ class: 'glyphicon glyphicon-trash', aria: { hidden: 'true'} }
+    %hr

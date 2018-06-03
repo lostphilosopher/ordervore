@@ -1,0 +1,13 @@
+.content
+  = "Add "
+  %strong
+    = "#{@order.order} for #{@order.user.name}"
+  = " to"
+
+= form_for(@group_order) do |f|
+  .form-group
+    = f.label :group_id
+    = f.select 'group_id', options_from_collection_for_select(@groups, :id, :name, selected: @group_order.group ? @group_order.group.id : nil)
+  = f.hidden_field(:order_id, value: @order.id)
+  .form-controls
+    = f.submit "Submit", class: 'btn btn-primary'
