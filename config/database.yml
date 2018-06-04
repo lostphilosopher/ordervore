@@ -80,6 +80,3 @@ test:
 #
 production:
   <<: *default
-  database: ordervore_production
-  username: ordervore
-  password: <%= ENV['ORDERVORE_DATABASE_PASSWORD'] %>
