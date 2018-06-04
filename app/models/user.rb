@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :groups
 
   validates :handle, uniqueness: true
+
+  def admin?
+    'wandersen02@gmail.com' == email
+  end
 end

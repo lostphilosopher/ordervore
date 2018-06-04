@@ -1,0 +1,12 @@
+%h2
+  Restaurants
+
+.container-fluid
+  .row
+    - @restaurants.each do |restaurant|
+      .col-xs-6
+        = "#{restaurant.name}"
+        %br
+      .col-xs-6
+        = link_to 'Edit', edit_restaurant_path(id: restaurant.id), class: 'btn btn-info'
+        = link_to 'Delete', edit_restaurant_path(id: restaurant.id), class: 'btn btn-info'
