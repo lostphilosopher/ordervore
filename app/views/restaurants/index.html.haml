@@ -2,8 +2,8 @@
   Restaurants
 
 .container-fluid
-  .row
-    - @restaurants.each do |restaurant|
+  - @restaurants.each do |restaurant|
+    .row
       .col-xs-6
         = "#{restaurant.name}"
         - if restaurant.approved?
