@@ -1,9 +1,9 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authenticate_admin, only: [:edit, :update, :show]
+  before_action :authenticate_admin, only: [:edit, :update, :index]
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = current_user.admin? ? Restaurant.all : Restaurant.where(approved: true)
   end
 
   def new
@@ -34,10 +34,13 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(
+    p = params.require(:restaurant).permit(
       :name,
       :menu_url,
-      :website
+      :website,
+      :apprved
     )
+    p[:approved] = current_user.admin?
+    p
   end
 end

@@ -56,12 +56,20 @@ input[type="text"] {
   border-color: #B1988A;
   background-color: #B1988A;
 }
+.btn-primary:active:focus {
+  border-color: #B1988A;
+  background-color: #B1988A;
+}
 .btn-info {
   border-color: #B1988A;
   background-color: #e4dbd2;
   font-size: 80%;
 }
 .btn-info:hover {
+  border-color: #B1988A;
+  background-color: #B1988A;
+}
+.btn-info:active:focus {
   border-color: #B1988A;
   background-color: #B1988A;
 }
