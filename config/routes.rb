@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   resources :restaurants
   resources :groups
   resources :group_orders
+
+  get 'support', to: 'home#support'
+
   root to: 'home#index'
 end
