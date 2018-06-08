@@ -6,5 +6,8 @@ class HomeController < ApplicationController
   end
 
   def contribute
+    if ENV['ACCEPT_CONTRIBUTIONS'].nil?
+      return redirect_to root_path
+    end
   end
 end
