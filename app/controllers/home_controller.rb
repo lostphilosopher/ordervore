@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def support
   end
+
+  def feedback
+  end
 end

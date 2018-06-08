@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :group_orders
 
   get 'support', to: 'home#support'
+  get 'feedback', to: 'home#feedback'
 
   root to: 'home#index'
 end
