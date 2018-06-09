@@ -84,3 +84,5 @@ restaurants.each do |restaurant|
     Restaurant.create(restaurant)
   end
 end
+
+puts "#{HEROKU_ENV}"
