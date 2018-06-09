@@ -8,6 +8,8 @@ deploy:
   app:
     development: ordervore-dev
     master: ordervore-prod
-  run:
-    - rake db:create
-    - rake db:migrate
+language: ruby
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed

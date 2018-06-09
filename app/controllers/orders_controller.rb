@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
     return redirect_to new_restaurant_path if Restaurant.count < 1
 
     @order = Order.new
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(
+      "approved = ? or creator_user_id = ?",
+      true,
+      current_user.id
+    )
   end
 
   def create

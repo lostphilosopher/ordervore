@@ -83,3 +83,16 @@ input[type="text"] {
   border-radius: 25px;
   background-color: #e4dbd2;
 }
+.header {
+  font-size: 40%;
+  background-color: #604441;
+  color: #FFFFFF !important;
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  a:hover { 
+    color: #B1988A;
+    text-decoration: none;
+  }
+}

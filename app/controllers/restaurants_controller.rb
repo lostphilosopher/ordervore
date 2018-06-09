@@ -41,6 +41,7 @@ class RestaurantsController < ApplicationController
       :apprved
     )
     p[:approved] = current_user.admin?
+    p[:creator_user_id] = current_user.id
     p
   end
 end
