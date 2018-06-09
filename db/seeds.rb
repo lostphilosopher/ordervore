@@ -38,7 +38,7 @@ restaurants = [
     website: 'https://pizzaluce.com/'
   },
   {
-    name: 'Dominos',
+    name: "Domino's",
     menu_url: 'https://www.dominos.com/en/pages/order/menu.jsp#/menu/category/viewAll/',
     website: 'https://www.dominos.com/en/'
   },
@@ -56,9 +56,29 @@ restaurants = [
     name: 'Piada',
     menu_url: 'https://mypiada.com/',
     website: 'https://mypiada.com/'
+  },
+  {
+    name: 'Culvers',
+    menu_url: 'https://www.culvers.com/',
+    website: 'https://www.culvers.com/menu-and-nutrition'
+  },
+  {
+    name: 'Burger King',
+    menu_url: 'https://www.bk.com/menu',
+    website: 'https://www.bk.com/'
+  },
+  {
+    name: "Dunkin' Donuts",
+    menu_url: 'https://www.dunkindonuts.com/en/food-drinks',
+    website: 'https://www.dunkindonuts.com/en'
   }
 ]
 
 restaurants.each do |restaurant|
-  Restaurant.create(restaurant)
+  r = Restaurant.find_by(name: restaurant[:name])
+  if r
+    r.update(restaurant)
+  else
+    Restaurant.create(restaurant)
+  end
 end
