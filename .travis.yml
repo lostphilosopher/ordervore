@@ -10,4 +10,5 @@ deploy:
     master: ordervore-prod
 language: ruby
 script:
+  - echo $HEROKU_ENV
   - bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:seed
