@@ -85,4 +85,4 @@ restaurants.each do |restaurant|
   end
 end
 
-puts "#{HEROKU_ENV}"
+puts "#{ENV['HEROKU_ENV']}"
