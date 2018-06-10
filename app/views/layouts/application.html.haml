@@ -11,7 +11,7 @@
   %body
     .container-fluid
       .row.header
-        .col-sm-8.col-sm-offset-2.col-xs-12text-right
+        .col-sm-8.col-sm-offset-2.col-xs-12.text-right
           - if current_user
             - if current_user.admin?
               = link_to('Restaurants', restaurants_path)
