@@ -11,7 +11,7 @@
   %body
     .container-fluid
       .row.header
-        .col-xs-8.col-xs-offset-2.text-right
+        .col-sm-8.col-sm-offset-2.col-xs-12text-right
           - if current_user
             - if current_user.admin?
               = link_to('Restaurants', restaurants_path)
@@ -22,7 +22,7 @@
           - else
             %br
       .row
-        .col-xs-8.col-xs-offset-2
+        .col-sm-8.col-sm-offset-2.col-xs-12
           .content
             %h1
               = link_to('Ordervore', root_path)
@@ -35,7 +35,7 @@
             - else
               = link_to('Sign In / Up', new_user_session_path, class: 'btn btn-lg btn-primary', class: 'btn btn-primary')
       .row
-        .col-xs-8.col-xs-offset-2
+        .col-sm-8.col-sm-offset-2.col-xs-12
           = yield
           %br
           %br
