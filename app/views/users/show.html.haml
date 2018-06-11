@@ -6,15 +6,18 @@
       = link_to 'New Order', new_order_path, class: 'btn btn-primary'
     %br
   - if @user
-    - @user.restaurants.each do |restaurant|
-      - order = Order.find_by(user_id: @user.id, restaurant_id: restaurant.id)
-      .text-center
-        = link_to "#{restaurant.name} order", order_path(id: order.id)
-        = link_to order_path(id: order.id), class: 'btn btn-primary btn-sm' do
-          %span{ class: 'glyphicon glyphicon-cutlery', aria: { hidden: 'true'} }
-        = link_to new_group_order_path(order_id: order.id), class: 'btn btn-primary btn-sm' do
-          %span{ class: 'glyphicon glyphicon-shopping-cart', aria: { hidden: 'true'} }
-      %br
+    .container-fluid
+      - @user.restaurants.each do |restaurant|
+        .row
+          - order = Order.find_by(user_id: @user.id, restaurant_id: restaurant.id)
+          .col-sm-8
+            = link_to "#{restaurant.name} order", order_path(id: order.id)
+          .col-sm-4.text-right
+            = link_to order_path(id: order.id), class: 'btn btn-primary btn-sm' do
+              %span{ class: 'glyphicon glyphicon-cutlery', aria: { hidden: 'true'} }
+            = link_to new_group_order_path(order_id: order.id), class: 'btn btn-primary btn-sm' do
+              %span{ class: 'glyphicon glyphicon-shopping-cart', aria: { hidden: 'true'} }
+        %br
   - else
     .text-center
       %h3
