@@ -8,6 +8,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "https://fonts.googleapis.com/css?family=Caveat", :rel => "stylesheet"}/
+
+    %meta{content: "#{@meta_description}", name: "description"}/
+    %meta{content: "#{@meta_keywords}", name: "keywords"}/
+    %meta{content: "#{@meta_author}", name: "author"}/
+
   %body
     .container-fluid
       .row.header
