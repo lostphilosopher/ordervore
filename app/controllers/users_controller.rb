@@ -1,12 +1,4 @@
 class UsersController < ApplicationController
-  def edit
-    binding.pry
-  end
-
-  def update
-    binding.pry
-  end
-
   def show
     if params[:id]
       @user = User.find_by(id: params[:id])
