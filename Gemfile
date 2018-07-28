@@ -48,6 +48,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "factory_girl", '4.8.1'
+  gem 'sitemap'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
