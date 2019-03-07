@@ -59,6 +59,7 @@ input[type="text"] {
 .btn-primary:active:focus {
   border-color: #B1988A;
   background-color: #B1988A;
+  outline: none;
 }
 .btn-info {
   border-color: #B1988A;
@@ -79,8 +80,14 @@ input[type="text"] {
 .btn-sm {
   font-size: 40%;
 }
+.content-header {
+  border-radius: 25px;
+  padding: 0px 5px 0px 5px;
+  background-color: #e4dbd2;
+}
 .content {
   border-radius: 25px;
+  padding: 10px 25px 10px 25px;
   background-color: #e4dbd2;
 }
 .header {
@@ -95,4 +102,19 @@ input[type="text"] {
     color: #B1988A;
     text-decoration: none;
   }
+}
+.form-controls:focus {
+  border-color: #B1988A !important;
+  background-color: #e4dbd2 !important;
+  outline: none;
+}
+.form-controls:hover {
+  border-color: #B1988A !important;
+  background-color: #e4dbd2 !important;
+  outline: none;
+}
+.form-controls:active {
+  border-color: #B1988A !important;
+  background-color: #e4dbd2 !important;
+  outline: none;
 }
