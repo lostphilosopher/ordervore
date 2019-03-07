@@ -1,11 +1,11 @@
-%h2 
-  Groups (for Group Orders)
-
-.text-center
-  = link_to 'Create new Group', new_group_path, class: 'btn btn-primary'
-
-%br
 .content
+  %h2
+    Groups (for Group Orders)
+
+  .text-center
+    = link_to 'Create new Group', new_group_path, class: 'btn btn-primary'
+
+  %br
   - unless @groups.empty?
     - @groups.each do |group|
       = link_to group.name, group_path(id: group.id)

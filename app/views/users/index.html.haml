@@ -1,11 +1,12 @@
-%h2
-  Users
-- unless @users.empty?
-  - @users.each do |user|
-    .content
-      = "#{user.name} aka #{user.handle}"
-      = link_to user_path(id: user.id), class: 'btn btn-primary' do
-        %span{ class: 'glyphicon glyphicon-cutlery', aria: { hidden: 'true'} }
-- else
-  %p
-    No users found for that search...
+.content
+  %h2
+    Users
+  - unless @users.empty?
+    - @users.each do |user|
+      .content
+        = "#{user.name} aka #{user.handle}"
+        = link_to user_path(id: user.id), class: 'btn btn-primary' do
+          %span{ class: 'glyphicon glyphicon-cutlery', aria: { hidden: 'true'} }
+  - else
+    %p
+      No users found for that search...

@@ -1,8 +1,9 @@
-%h2
-  Find someone's order
+.content
+  %h2
+    Find someone's order
 
-= form_tag('/users', method: :get) do
-  .form-group
-    = label_tag(:search)
-    = text_field_tag(:search, nil, class: 'form-control')
-    = submit_tag("Submit", class: 'btn btn-primary form-controls')
+  = form_tag('/users', method: :get) do
+    .form-group
+      = label_tag(:search)
+      = text_field_tag(:search, nil, class: 'form-control')
+      = submit_tag("Submit", class: 'btn btn-primary form-controls')
