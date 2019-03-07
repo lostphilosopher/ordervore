@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'contribute', to: 'home#contribute'
   get 'support', to: 'home#support'
   get 'feedback', to: 'home#feedback'
+  get 'analytics', to: 'home#analytics'
 
   root to: 'home#index'
 end
